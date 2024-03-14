@@ -6,26 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div class="d-inline-flex flex-column">
+    <div class="d-inline-flex flex-column p-5">
       <h1 class="text-center">Live Wage Display</h1>
-      <div class="container input-group mb-3">
+      <div class="container input-group mb-3" id="inputgroup-wage">
         <span class="input-group-text">Hourly Wage (USD) $</span>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="input-wage">
-        <span class="input-group-text">.00</span>
+        <input type="number" class="form-control" aria-label="Amount in dollars" id="input-wage">
       </div>
-      <div class="container input-group mb-3">
+      <div class="container input-group mb-3" id="inputgroup-currency">
         <span class="input-group-text">$1 USD is $</span>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="input-currency">
+        <input type="number" class="form-control" aria-label="Amount in dollars" id="input-currency">
         <span class="input-group-text">CAD</span>
       </div>
-      <h1 class="d-none">00:00:00</h1>
-      <h2 class="d-none">$0.00 USD</h2>
-      <h2 class="d-none">$0.00 CAD</h2>
+      <h1 class="d-none" id="output-time">00:00:00</h1>
+      <h2 class="d-none" id="output-usd">$0.00 USD</h2>
+      <h2 class="d-none" id="output-cad">$0.00 CAD</h2>
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-outline-danger" disabled>Stop</button>
-        <button type="button" class="btn btn-outline-warning" disabled>Pause</button>
-        <button type="button" class="btn btn-outline-success">Play</button>
+        <button type="button" class="btn btn-outline-danger btn-lg" id="btn-stop" disabled>Stop</button>
+        <button type="button" class="btn btn-outline-warning btn-lg" id="btn-pause" disabled>Pause</button>
+        <button type="button" class="btn btn-outline-success btn-lg" id="btn-play" disabled>Play</button>
       </div>
     </div>
+    <script src="./src/js/script.js"></script>
   </body>
 </html>
