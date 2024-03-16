@@ -81,6 +81,9 @@ function startButtonHandler() {
   btn_pause.disabled = false;
   btn_reset.disabled = false;
 
+  input_wage.disabled = true;
+  input_currency.disabled = true;
+
   wage_usd = parseFloat(input_wage.value);
   wage_cad = parseFloat(input_currency.value) * wage_usd;
 
@@ -99,6 +102,9 @@ function resetButtonHandler() {
   btn_start.disabled = true;
   btn_pause.disabled = true;
   btn_reset.disabled = true;
+
+  input_wage.disabled = false;
+  input_currency.disabled = false;
 
   input_wage.value = "";
   input_currency.value = "";
