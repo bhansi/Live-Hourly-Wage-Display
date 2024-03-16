@@ -39,12 +39,11 @@ function updateOutputTime() {
   let current_time = new Date().getTime();
   elapsed_time = current_time - start_time;
 
-  let milliseconds = elapsed_time % 1000;
   let seconds = Math.floor(elapsed_time / 1000) % 60;
   let minutes = Math.floor(elapsed_time / 1000 / 60) % 60;
   let hours = Math.floor(elapsed_time / 1000 / 60 / 60);
 
-  output_time.innerText = leadingZero(hours) + ":" + leadingZero(minutes) + ":" + leadingZero(seconds) + "." + leadingZeros(milliseconds);
+  output_time.innerText = leadingZero(hours) + ":" + leadingZero(minutes) + ":" + leadingZero(seconds);
 }
 
 function updateOutputUSD() {
@@ -59,10 +58,6 @@ function updateOutputCAD() {
 
 function leadingZero(number) {
   return (number < 10 ? "0" : "") + number;
-}
-
-function leadingZeros(number) {
-  return (number < 10 ? "00" : number < 100 ? "0" : "") + number;
 }
 
 function inputFieldHandler(e) {
