@@ -9,6 +9,8 @@ let btn_start = document.getElementById("btn-start");
 let btn_pause = document.getElementById("btn-pause");
 let btn_reset = document.getElementById("btn-reset");
 
+let happy_cat = document.getElementById("happy-cat");
+
 let interval;
 let start_time;
 let elapsed_time;
@@ -17,6 +19,9 @@ let paused_time = 0;
 let wage_usd;
 let wage_cad;
 let earnings_usd;
+
+let happy_cat_displayed_at = 0;
+let happy_cat_displayed = false;
 
 function startInterval() {
   start_time = new Date().getTime() - paused_time;
@@ -43,6 +48,13 @@ function updateOutputTime() {
   let minutes = Math.floor(elapsed_time / 1000 / 60) % 60;
   let hours = Math.floor(elapsed_time / 1000 / 60 / 60);
 
+  if(!happy_cat_displayed && minutes > happy_cat_displayed_at && minutes % 1 == 0) {
+    displayHappyCat(minutes);
+  }
+  else if(happy_cat_displayed && seconds > 0 && seconds % 5 == 0) {
+    hideHappyCat();
+  }
+
   output_time.innerText = leadingZero(hours) + ":" + leadingZero(minutes) + ":" + leadingZero(seconds);
 }
 
@@ -58,6 +70,17 @@ function updateOutputCAD() {
 
 function leadingZero(number) {
   return (number < 10 ? "0" : "") + number;
+}
+
+function displayHappyCat(time) {
+  happy_cat_displayed = true;
+  happy_cat_displayed_at = time;
+  happy_cat.classList.remove("d-none");
+}
+
+function hideHappyCat() {
+  happy_cat_displayed = false;
+  happy_cat.classList.add("d-none");
 }
 
 function inputFieldHandler(e) {
@@ -103,6 +126,9 @@ function resetButtonHandler() {
 
   input_wage.value = "";
   input_currency.value = "";
+
+  happy_cat_displayed_at = 0;
+  happy_cat_displayed = false;
 
   stopInterval();
   paused_time = 0;
