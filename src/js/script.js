@@ -48,7 +48,7 @@ function updateOutputTime() {
   let minutes = Math.floor(elapsed_time / 1000 / 60) % 60;
   let hours = Math.floor(elapsed_time / 1000 / 60 / 60);
 
-  if(!happy_cat_displayed && minutes > happy_cat_displayed_at && minutes % 1 == 0) {
+  if(!happy_cat_displayed && minutes > happy_cat_displayed_at && minutes % 15 == 0) {
     displayHappyCat(minutes);
   }
   else if(happy_cat_displayed && seconds > 0 && seconds % 5 == 0) {
