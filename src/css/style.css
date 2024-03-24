@@ -3,6 +3,13 @@ h2, img {
   vertical-align: middle;
 }
 
-img {
+.flag {
   width: 2.5rem;
+}
+
+.cat {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25rem;
 }

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div class="d-inline-flex flex-column p-5">
+    <div class="main d-inline-flex flex-column p-5">
       <h1 class="text-center text-light bg-primary rounded-pill p-2">Live Wage Display</h1>
       <div class="p-3">
         <div class="container input-group mb-3" id="inputgroup-wage">
@@ -23,21 +23,22 @@
         <div id="outputgroup">
           <h1 class="mb-2" id="output-time">00:00:00</h1>
           <div class="mb-2">
-            <img src="./src/img/us.svg" alt="US Flag">
+            <img class="flag" src="./src/img/us.svg" alt="US Flag">
             <h2 class="align-middle px-3" id="output-usd">$0.00</h2>
           </div>
           <div>
-            <img src="./src/img/ca.svg" alt="Canadian Flag">
+            <img class="flag" src="./src/img/ca.svg" alt="Canadian Flag">
             <h2 class="align-middle px-3" id="output-cad">$0.00</h2>
           </div>
         </div>
       </div>
-      <div class="btn-group" role="group" aria-label="Basic example">
+      <div class="btn-group" role="group">
         <button type="button" class="btn btn-outline-success btn-lg" id="btn-start" disabled>Start</button>
         <button type="button" class="btn btn-outline-warning btn-lg" id="btn-pause" disabled>Pause</button>
         <button type="button" class="btn btn-outline-danger btn-lg" id="btn-reset" disabled>Reset</button>
       </div>
     </div>
+    <img class="cat d-none" id="happy-cat" src="./src/img/happy-cat-happy-happy-cat.gif" alt="Happy cat gif.">
     <script src="./src/js/script.js"></script>
   </body>
 </html>
